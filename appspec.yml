@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/bestdeal/api.best-deals.ae/
+file_exists_behavior: OVERWRITE
+hooks:
+
+  AfterInstall:
+    - location: scripts/start_laravel.sh
+      timeout: 800
+      runas: ubuntu
