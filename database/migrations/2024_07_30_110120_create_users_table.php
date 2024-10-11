@@ -14,15 +14,12 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique()->nullable();
-            $table->string('mobile')->unique()->nullable();
-            $table->string('password')->nullable();
-            $table->foreignId('role_id')->references('id')->on('roles');
-            $table->integer('status')->default(1)->comment('1-active, 2-blocked');
-            $table->timestamp('deleted_at')->nullable();
-            $table->rememberToken();
+            $table->foreignId('department_id')->references('id')->on('department');
+            $table->foreignId('designation_id')->references('id')->on('designation');
+            $table->string('mobile')->unique();
             $table->timestamps();
         });
+
     }
 
     /**
@@ -31,5 +28,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('sessions');
     }
 };

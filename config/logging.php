@@ -65,14 +65,6 @@ return [
             'replace_placeholders' => true,
         ],
 
-        'daily' => [
-            'driver' => 'daily',
-            'path' => storage_path('logs/laravel.log'),
-            'level' => env('LOG_LEVEL', 'debug'),
-            'days' => 14,
-            'replace_placeholders' => true,
-        ],
-
         'admin' => [
             'driver' => 'daily',
             'path' => storage_path('logs/admin/error.log'),
@@ -81,20 +73,30 @@ return [
             'days' => 0,
         ],
 
-        'user' => [
+        'customer' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/user/error.log'),
+            'path' => storage_path('logs/customer/error.log'),
             'ignore_exceptions' => false,
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 0,
         ],
-        'organization' => [
+
+        'vendor' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/organization/error.log'),
+            'path' => storage_path('logs/vendor/error.log'),
             'ignore_exceptions' => false,
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 0,
         ],
+
+        'daily' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/laravel.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => 14,
+            'replace_placeholders' => true,
+        ],
+
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
