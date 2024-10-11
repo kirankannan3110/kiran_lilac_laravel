@@ -17,6 +17,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'certificate_head' => env('CERTIFICATE_HEAD', 'default_value'),
+    'app_name' => env('MAIL_FROM_NAME', 'default_value'),
 
     /*
     |--------------------------------------------------------------------------
@@ -71,8 +73,7 @@ return [
     */
 
     // 'timezone' => 'UTC',
-    // 'timezone' => 'Asia/Kolkata',
-    'timezone' => 'Asia/Dubai',
+    'timezone' => 'US/Eastern',
 
     /*
     |--------------------------------------------------------------------------
@@ -170,8 +171,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
-        
     ])->toArray(),
 
     /*

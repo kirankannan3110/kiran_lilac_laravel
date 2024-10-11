@@ -65,30 +65,6 @@ return [
             'replace_placeholders' => true,
         ],
 
-        'admin' => [
-            'driver' => 'daily',
-            'path' => storage_path('logs/admin/error.log'),
-            'ignore_exceptions' => false,
-            'level' => env('LOG_LEVEL', 'debug'),
-            'days' => 0,
-        ],
-
-        'customer' => [
-            'driver' => 'daily',
-            'path' => storage_path('logs/customer/error.log'),
-            'ignore_exceptions' => false,
-            'level' => env('LOG_LEVEL', 'debug'),
-            'days' => 0,
-        ],
-
-        'vendor' => [
-            'driver' => 'daily',
-            'path' => storage_path('logs/vendor/error.log'),
-            'ignore_exceptions' => false,
-            'level' => env('LOG_LEVEL', 'debug'),
-            'days' => 0,
-        ],
-
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
@@ -97,6 +73,28 @@ return [
             'replace_placeholders' => true,
         ],
 
+        'admin' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/admin/error.log'),
+            'ignore_exceptions' => false,
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => 0,
+        ],
+
+        'user' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/user/error.log'),
+            'ignore_exceptions' => false,
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => 0,
+        ],
+        'organization' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/organization/error.log'),
+            'ignore_exceptions' => false,
+            'level' => env('LOG_LEVEL', 'debug'),
+            'days' => 0,
+        ],
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),

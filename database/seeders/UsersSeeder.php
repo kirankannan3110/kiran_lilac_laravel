@@ -16,40 +16,20 @@ class UsersSeeder extends Seeder
     {
         $now = Carbon::now();
 
-        DB::table('users')->insert([
-
-            [
-                'name' => 'John Due',
-                'department_id' => '1',
-                'designation_id' => '1',
-                'mobile' => '8887847484',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'Tommy Mark',
-                'department_id' => '2',
-                'designation_id' => '2',
-                'mobile' => '8887333484',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'John Due',
-                'department_id' => '1',
-                'designation_id' => '1',
-                'mobile' => '8327847484',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name' => 'Tommy Mark',
-                'department_id' => '2',
-                'designation_id' => '2',
-                'mobile' => '8885327484',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ]
-        ]);
+        $array = array(
+            array(
+                'name'              => 'Admin',
+                'email'             => 'admin@gistepup.com',
+                'mobile'            => '0934859308',
+                'password'          => bcrypt('123456'),
+                'role_id'           => 1,
+                'country_code_id'   => 1,
+                'created_at'        => $now,
+                'updated_at'        => $now,
+            ),
+           
+           
+        );
+        DB::table('users')->insert($array);
     }
 }
